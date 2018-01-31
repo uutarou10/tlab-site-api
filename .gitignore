@@ -21,3 +21,6 @@
 !/tmp/.keep
 
 .byebug_history
+
+# Idea
+.idea/
