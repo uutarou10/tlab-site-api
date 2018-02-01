@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  before_action :authenticate_user, only: [:create]
+
   def index
     projects = Project.all.select(
       :id,
