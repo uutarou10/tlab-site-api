@@ -7,9 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.create!(
-  login_name: 'uutarou',
-  password: 'encrypted_password',
-  name: 'ううたろ'
+   email: 'example@example.com',
+   name: '田胡 健太郎',
+   password: 'password',
+   password_confirmation: 'password'
 )
 
 Article.create(

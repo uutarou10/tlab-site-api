@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_secure_password
   has_many :articles
-  validates :login_name, uniqueness: true
+  validates :email, uniqueness: true
 end
