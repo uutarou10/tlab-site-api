@@ -2,27 +2,21 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user, only: [:create]
 
   def index
-    projects = Project.all.select(
-      :id,
-      :title,
-      :description,
-      :url,
-      :icon_url,
-    )
+    projects = Project.all
 
-    render json: projects
+    render json: projects.select_attribute
   end
 
   def create
     project = Project.create!(project_params)
-    render json: project
+    render json: project.select_attribute
   end
 
   def update
     project = Project.find(params[:id])
     project.update_attributes!(project_params)
 
-    render json: project
+    render json: project.select_attribute
   end
 
   private
