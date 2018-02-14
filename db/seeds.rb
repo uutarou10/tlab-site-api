@@ -13,11 +13,13 @@ user = User.create!(
    password_confirmation: 'password'
 )
 
-Article.create(
-  title: 'テスト記事',
-  body: 'これはテスト記事です。ほげほげ〜〜',
-  user: user
-)
+5.times do |i|
+  Article.create(
+    title: "テスト記事#{i+1}",
+    body: "これは#{i+1}番目のテスト記事です。ほげほげ〜〜",
+    user: user
+  )
+end
 
 project = Project.create!(
   title: 'Cloud Service Center',
